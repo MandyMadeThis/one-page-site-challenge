@@ -1,0 +1,172 @@
+// IMPORTANT REMINDER: @extend CANNOT BE USED IN MEDIA QUERIES
+
+//Adds a clearfix to the element
+%clearfix {
+  @include clearfix;
+}
+
+// @Extend this to vertically align an element.
+%vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// @extend this for another method of vertical centring. Must add a height value to the element for this to work.
+%absolute-vertical-center {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+// @extend for highlighted text
+%highlight {
+  background-color: $base-accent-color;
+  color: $white;
+  display: inline;
+  text-transform: uppercase;
+  line-height: 1.2;
+  padding: 5px 0;
+  box-shadow: 10px 0 0 $base-accent-color, (-10px) 0 0 $base-accent-color;
+  position: relative;
+  left: 10px;
+}
+
+// Triangle Mixing from http://bourbon.io/docs/#triangle
+@mixin triangle($size, $color, $direction) {
+    $width: nth($size, 1);
+    $height: nth($size, length($size));
+    $foreground-color: nth($color, 1);
+    $background-color: if(length($color) == 2, nth($color, 2), transparent);
+
+    height: 0;
+    width: 0;
+
+    @if $direction == up or $direction == down or $direction == right or $direction == left {
+        $width: $width / 2;
+        $height: if(length($size) > 1, $height, $height / 2);
+
+        @if $direction == up {
+            border-bottom: $height solid $foreground-color;
+            border-left: $width solid $background-color;
+            border-right: $width solid $background-color;
+        }
+
+        @else if $direction == right {
+            border-bottom: $width solid $background-color;
+            border-left: $height solid $foreground-color;
+            border-top: $width solid $background-color;
+        }
+
+        @else if $direction == down {
+            border-left: $width solid $background-color;
+            border-right: $width solid $background-color;
+            border-top: $height solid $foreground-color;
+        }
+
+        @else if $direction == left {
+            border-bottom: $width solid $background-color;
+            border-right: $height solid $foreground-color;
+            border-top: $width solid $background-color;
+        }
+    }
+
+    @else if $direction == up-right or $direction == up-left {
+        border-top: $height solid $foreground-color;
+
+        @if $direction == up-right {
+            border-left: $width solid $background-color;
+        }
+
+        @else if $direction == up-left {
+            border-right: $width solid $background-color;
+        }
+    }
+
+    @else if $direction == down-right or $direction == down-left {
+        border-bottom: $height solid $foreground-color;
+
+        @if $direction == down-right {
+            border-left: $width solid $background-color;
+        }
+
+        @else if $direction == down-left {
+            border-right: $width solid $background-color;
+        }
+    }
+
+    @else if $direction == inset-up {
+        border-color: $background-color $background-color $foreground-color;
+        border-style: solid;
+        border-width: $height $width;
+    }
+
+    @else if $direction == inset-down {
+        border-color: $foreground-color $background-color $background-color;
+        border-style: solid;
+        border-width: $height $width;
+    }
+
+    @else if $direction == inset-right {
+        border-color: $background-color $background-color $background-color $foreground-color;
+        border-style: solid;
+        border-width: $width $height;
+    }
+
+    @else if $direction == inset-left {
+        border-color: $background-color $foreground-color $background-color $background-color;
+        border-style: solid;
+        border-width: $width $height;
+    }
+}
+
+//This hack will use the polyfill for fixing IE background-size: cover issue. 
+// backgroundsize.min.htc file needs to be uploaded to server in the root directory of the wordpress install.
+@mixin fix-ie8-background-cover {
+  -ms-behavior: url("../backgroundsize.min.htc");
+}
+
+// FLASHES
+@mixin flash($color) {
+  background: $color;
+  color: darken($color, 60);
+
+  a {
+    color: darken($color, 70);
+
+    &:hover {
+      color: darken($color, 90);
+    }
+  }
+}
+
+%flash-base {
+  font-weight: bold;
+  margin-bottom: $base-spacing / 2;
+  padding: $base-spacing / 2;
+}
+
+%flash-alert {
+  @extend %flash-base;
+  @include flash($alert-color);
+}
+
+%flash-error {
+  @extend %flash-base;
+  @include flash($error-color);
+}
+
+%flash-notice {
+  @extend %flash-base;
+  @include flash($notice-color);
+}
+
+%flash-success {
+  @extend %flash-base;
+  @include flash($success-color);
+}

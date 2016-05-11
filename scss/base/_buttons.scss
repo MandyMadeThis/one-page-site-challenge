@@ -1,0 +1,38 @@
+// @extend %button
+%button {
+   //common button styles here
+
+
+    &:hover,
+    &:focus {
+        //common button hover styles here
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}
+
+%button-alternate {
+    //common alternate button styles here
+
+    &:hover,
+    &:focus {
+        //common alternate button hover styles here
+    }
+
+}
+
+button,
+a.button,
+input[type="submit"] {
+    @extend %button;
+    -webkit-appearance: none;
+    user-select: none;
+}
+
+button.button-alternate,
+a.button-alternate {
+    @extend %button-alternate;
+}

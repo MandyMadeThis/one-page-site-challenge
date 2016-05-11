@@ -1,0 +1,23 @@
+@import "normalize";
+
+// Dependencies
+@import "media-queries";
+@import "variables";
+@import "animations";
+
+// Typography and Elements
+// @import "fonts"; //using google fonts for this project
+@import "typography";
+
+// Extends
+@import "extends/ext-helpers";
+@import "extends/ext-background-svg";
+
+@import "helper-classes";
+@import "form-elements";
+@import "lists";
+@import "layout";
+@import "header";
+@import "footer";
+@import "buttons";
+

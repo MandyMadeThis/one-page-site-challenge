@@ -1,0 +1,19 @@
+//SOME OF THIS IS LEFTOVER FROM ANOTHER PROJECT - ADJUST TO MATCH DESIGN NEEDS FOR THIS PROJECT
+// MOBLIE STYLES FIRST! (4 COLUMNS)
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: $white;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  line-height: $base-line-height;
+  font-size: 20px;  
+}
+
+// Touch device fixes
+.touch {
+    
+}

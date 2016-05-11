@@ -1,0 +1,127 @@
+//THESE ARE LEFTOVER FROM ANOTHER PROJECT - ADJUST TO MATCH DESIGN NEEDS FOR THIS PROJECT
+
+$input-background-color: $grey-light;
+
+input[type=text],
+input[type=password],
+input[type=email],
+select {
+  border: 0;
+  color: $grey;
+  background-color: $input-background-color;
+  width: 100%;
+  padding: 15px;
+  outline: none;
+}
+
+input, textarea, select {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+
+  &.error {
+    border: 3px solid $red;
+  }
+}
+
+select {
+  margin: 0;
+  border: 1px solid transparent;
+  outline: none;
+  box-sizing: border-box;
+  appearance: none;
+  background-color: $input-background-color;
+  color: $grey;
+  text-transform: uppercase;
+  height: 55px;
+  padding: 15px;
+  border-radius: none;
+}
+
+textarea {
+  border: 0;
+  color: $grey;
+  background-color: $input-background-color;
+  width: 100%;
+  padding: 15px;
+  margin: 0;
+  resize: none;
+  min-height: 150px;
+  outline: none;
+}
+
+input[type=checkbox].css-checkbox {
+  position: absolute;
+  z-index: -1000;
+  display: none;
+}
+
+input[type=checkbox].css-checkbox + label.css-label, input[type=checkbox].css-checkbox + label.css-label.clr {
+  padding-left: 32px;
+  height: 21px;
+  display: inline-block;
+  line-height: 21px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  font-size: 18px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label, input[type=checkbox].css-checkbox + label.css-label.chk {
+  background-position: 0 -21px;
+}
+
+label.css-label {
+  background-image: url(http://csscheckbox.com/checkboxes/u/csscheckbox_8f6de0d585fe27cf70207903360e4ef9.png);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+label.error {
+  background-color: $red;
+  color: $white;
+  float: right;
+  font-size: 10px;
+  height: 37px;
+  margin: 8px 0 25px;
+  padding: 10px 15px 5px 5px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  
+  @include media(small) {
+      font-size: .9em;
+      padding: 10px 15px 5px 5px;
+      right: -300px;
+  }
+
+  @include media(medium) {
+      font-size: 1em;
+      padding: 7px 15px 5px 5px;
+  }
+  
+  &:before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 0;
+    width: 30px;
+    height: 37px;
+    background: url(../images/error-tab.png) no-repeat;
+  }
+
+  &.valid {
+    display: none !important;
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+

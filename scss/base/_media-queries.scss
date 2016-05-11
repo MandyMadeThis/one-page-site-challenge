@@ -1,0 +1,45 @@
+// Breakpoints values - MOBILE FIRST!! 
+$breakpoints: (
+  'small' : (min-width:  480px),
+  'medium' : (min-width:  768px),
+  'large' : (min-width:  1025px),
+  'xlarge' : (min-width: 1920px)
+  //if you need more/special sizes, add them here:
+);
+ 
+@mixin media($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoints}`. "
+        + "Please make sure it is defined in the `$breakpoints` map.";
+  }
+}
+
+
+// USE LIKE THIS:
+// 480px to 767px
+@include media(small) {}
+
+// 768px to 1024px
+@include media(medium) {}
+
+// 1025px to 1919px
+@include media(large) {}
+
+// 1920px +
+@include media(xlarge) {}
+
+
+
+
+
+
+

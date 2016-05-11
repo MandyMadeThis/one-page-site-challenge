@@ -1,0 +1,107 @@
+// Fonts
+
+$font: 'Lato', sans-serif;
+
+$base-font-family: $font;
+// $header-font-family: ;
+
+
+
+strong {
+  font-family: $font-lato;
+  font-weight: 700;
+}
+
+a {
+  transition: color 0.25s linear;
+  color: $base-link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $hover-link-color;
+  }
+
+  &:active, &:focus {
+    color: $hover-link-color;
+    outline: none;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  line-height: $header-line-height;
+  color: $base-accent-color;
+  margin: 0;
+  font-weight: normal; // No Bold - yuck!
+  text-rendering: optimizeLegibility; // Fixes the character spacing for headings
+}
+
+
+//ADJUST HEADING SIZES AS PER DESIGN
+
+h1, 
+.h1 {
+  @include media(small) {}
+
+  // 768px to 1024px
+  @include media(medium) {}
+
+  // 1025px to 1919px
+  @include media(large) {}
+
+  // 1920px +
+  @include media(xlarge) {}
+}
+
+h2, 
+.h2 {
+  font-size: 24px;
+
+  @include media(medium) {font-size: 26px;}
+
+  @include media(large) {font-size: 28px;}
+}
+
+h3, 
+.h3 {
+  font-size: 22px;
+
+  @include media(medium) {font-size: 31px;}
+
+  @include media(large) {font-size: 38px;}
+}
+
+h4, 
+.h4 {
+  font-size: 25px;
+
+  @include media(medium) {font-size: 27px;}
+
+  @include media(large) { font-size: 32px;}
+}
+
+h5, 
+.h5 {
+  font-size: 18px;
+
+  @include media(medium) {font-size: 19px;}
+
+  @include media(large) {font-size: 24px;}
+}
+
+h6, 
+.h6 {
+  
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: $base-spacing 0;
+}

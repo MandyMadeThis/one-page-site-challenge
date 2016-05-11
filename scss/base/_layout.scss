@@ -1,0 +1,69 @@
+//vertical center w/ flexbox!
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// vertical centering, when Flexbox isn't an option. 
+// Takes one argument of $height which is the total height of the element that will be vertically centered (including margins & padding)
+@mixin absolute-vertical-center($height:100%) {
+    margin: auto;
+    position: absolute;
+    top: 0; 
+    bottom: 0; 
+    height: $height;
+}
+
+// Same as above mixing, but adds vertical AND horizontal centring
+@mixin absolute-vert-horz-center($height:100%) {
+    margin: auto;
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    bottom: 0; 
+    right: 0;
+    height: $height;
+}
+
+// Use the section tag as the outer container of each section of the home page
+section {
+  width: 100%;
+  position: relative;
+}
+
+// Use the .container class for anything that needs to be inside the grid.
+.container {
+  max-width: 96%;
+  margin: 0 auto;
+  position: relative;
+
+  @include media(small) {
+    max-width: 90%;
+  }
+
+  @include media(medium) {
+     max-width: 80%
+  }
+
+  @include media(large) {
+     max-width:  1000px;
+  }
+
+  @include media(xlarge) {
+    max-width: 1200px;
+  }
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+//need to give the div it's actual height for each use
+.verticle-center {
+  @extend %vertical-align;
+}

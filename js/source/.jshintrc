@@ -1,0 +1,65 @@
+{
+    // Enforce undefined globals
+    "undef" : true,
+    //Don't check for unused functions
+    "unused": false,
+    //enforces code blocks should be surrounded with curly braces
+    "curly": true,
+    //Stop warnings about == and !=
+    "eqeqeq": false,
+    "strict": false,
+    //disable dot notation warning
+    "-W069": false,
+    "globals": {
+        // Defines common browser globals
+        "browser" : true,
+        "jQuery": true,
+        "console": true,
+        "window": true,
+        "setTimeout": true,
+        "document": true,
+        "google": true,
+        "Modernizr": true,
+        "navigator": true,
+        // Add Our Globals
+        "modal": true,
+
+        // Vendor Globals
+        "$": false,
+        "bowser": false,
+        "ScrollMagic":false,
+        // GSAP Globals
+        "TimelineLite" : false,
+        "TimelineMax" : false,
+        "TweenLite" : false,
+        "TweenMax" : false,
+        "Back" : false,
+        "Bounce" : false,
+        "Circ" : false,
+        "Cubic" : false,
+        "Ease" : false,
+        "EaseLookup" : false,
+        "Elastic" : false,
+        "Expo" : false,
+        "Linear" : false,
+        "Power0" : false,
+        "Power1" : false,
+        "Power2" : false,
+        "Power3" : false,
+        "Power4" : false,
+        "Quad" : false,
+        "Quart" : false,
+        "Quint" : false,
+        "RoughEase" : false,
+        "Sine" : false,
+        "SlowMo" : false,
+        "SteppedEase" : false,
+        "Strong" : false,
+        "Draggable" : false,
+        "SplitText" : false,
+        "VelocityTracker" : false, 
+        "CSSPlugin" : false,
+        "ThrowPropsPlugin" : false, 
+        "BezierPlugin" : false
+    }
+}

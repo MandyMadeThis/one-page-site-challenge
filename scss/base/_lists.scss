@@ -1,0 +1,35 @@
+//THESE ARE LEFTOVER FROM ANOTHER PROJECT - ADJUST TO MATCH DESIGN NEEDS FOR THIS PROJECT
+
+// Default unordered lists are unstyled
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+// Default Ordered List Styles
+ol {
+    list-style-type: decimal;
+    padding-left: 60px;
+    font-family: $font-light;
+    font-size: 110%;
+}
+
+// @Extend this for a styled lists or use class (use for blog post styling)
+%styled, 
+.list-styled {
+  list-style-type: square;
+}
+
+dl {
+  margin-bottom: $base-spacing / 2;
+
+  dt {
+    font-weight: bold;
+    margin-top: $base-spacing / 2;
+  }
+
+  dd {
+    margin: 0;
+  }
+}

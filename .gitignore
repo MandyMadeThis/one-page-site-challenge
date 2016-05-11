@@ -1,0 +1,73 @@
+# folders and files to be ignored by git
+############
+## IDEs
+############
+*.launch
+*.log
+*.pydevproject
+*.swp
+*~.nib
+.buildpath
+.classpath
+.cproject
+.externalToolBuilders/
+.loadpath
+.metadata
+.project
+.settings/
+local.properties
+nbproject/
+
+############
+## Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+############
+## OSes
+############
+._*
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+############
+## Misc
+############
+*.[Cc]ache
+*.bak
+*.cpr
+*.log
+*.orig
+*.php.in
+*.tmp
+._*
+.idea/
+.Trashes
+bin/
+temp/
+tmp/
+
+############
+## Project
+############
+*.map
+*.scssc
+.sass-cache/
+.svn
+assets/
+build/
+node_modules/
+
